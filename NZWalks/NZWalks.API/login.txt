@@ -1,0 +1,27 @@
+{
+  "username": "user1@example.com",
+  "password": "Test123!",
+  "roles": [
+    "Reader"
+  ]
+}
+
+{
+  "username": "reader@ex.com",
+  "password": "Test123!"
+  "roles": [
+    "Reader"
+  ]
+}
+{
+  "jwtToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJyZWFkZXJAZXguY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiUmVhZGVyIiwiZXhwIjoxNzEwNjUzMzU5LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MDg3LyIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjcwODcvIn0.79zmcq3bP-0ZAJMUiuYWTe6CQgtbZcIajLNINY1JDLg"
+}
+
+{
+  "username": "writer@ex.com",
+  "password": "Test123!",
+  "roles": [
+    "Writer"
+  ]
+}
+ Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJyZWFkZXJAZXguY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiUmVhZGVyIiwiZXhwIjoxNzEwNjUzMzU5LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MDg3LyIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjcwODcvIn0.79zmcq3bP-0ZAJMUiuYWTe6CQgtbZcIajLNINY1JDLg
