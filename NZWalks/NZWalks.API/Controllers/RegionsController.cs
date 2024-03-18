@@ -9,7 +9,9 @@ using NZWalks.API.Models.Domain;
 using NZWalks.API.Models.DTO;
 using NZWalks.API.Models.DTOs;
 using NZWalks.API.Repositories.Interfaces;
+using Serilog.Data;
 using System.Collections.Generic;
+using System.Text.Json;
 
 namespace NZWalks.API.Controllers
 {
@@ -21,27 +23,40 @@ namespace NZWalks.API.Controllers
         private readonly NZWalksDbContext context;
         private readonly IRegionRepository regionRepository;
         private readonly IMapper mapper;
+        private readonly ILogger<RegionsController> logger;
 
         public RegionsController(NZWalksDbContext context, IRegionRepository regionRepository,
-            IMapper mapper)
+            IMapper mapper, ILogger<RegionsController> logger)
         {
             this.context = context;
             this.regionRepository = regionRepository;
             this.mapper = mapper;
+            this.logger = logger;
         }
 
         // GET ALL REGIONS
         // GET: https://localhost:portnumber/api/regions
         [HttpGet]
-        [Authorize(Roles = "Reader")]
+        //[Authorize(Roles = "Reader")]
         public async Task<IActionResult> GetAll()
         {
-           // Get data from database - Domain models
-          var regionDomain = await regionRepository.GetAllAsync();
+            try
+            {
+                throw new Exception("This is a custom exception");
+                // Get data from database - Domain models
+                var regionDomain = await regionRepository.GetAllAsync();
 
-           // Map domain model to dto
-           // Return DTOs to client
-           return Ok(mapper.Map<List<RegionDto>>(regionDomain));
+                // Map domain model to dto
+                // Return DTOs to client
+                return Ok(mapper.Map<List<RegionDto>>(regionDomain));
+            }
+
+            catch (Exception ex) 
+            {
+                logger.LogError(ex, ex.Message);
+                throw;
+            }
+
         }
 
         // GET SINGLE REGION (Get region by Id)
